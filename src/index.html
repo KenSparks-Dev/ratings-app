@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Interactive rating component</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/style.scss" />
+</head>
+
+<body>
+  <!-- Rating state start -->
+  <div id="rate" class="rating-component">
+    <div class="rating-component__content">
+      <img class="rating-component__icon" src="./images/icon-star.svg" v-bind:alt="icon.alt">
+      <h1 class="rating-component__title">{{title}}</h1>
+      <p class="rating-component__text">{{text}}</p>
+      <ul class="rating-component__rating-btns">
+        <li v-for="rating in ratings"><button class="rating-component__rating-btn"
+            v-bind:id="rating.id">{{rating.rating}}</button></li>
+      </ul>
+      <button class="rating-component__submit-btn">{{submitText}}</button>
+    </div>
+  </div>
+  <!-- Rating state end -->
+
+  <!-- Thank you state start -->
+  <div id="thankYou"></div>
+
+
+  <!-- Thank you state end -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script type="module" src="./app.js"></script>
+</body>
+
+</html>
